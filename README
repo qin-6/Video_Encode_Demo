@@ -1,0 +1,9 @@
+#linux平台streaming测试demo
+
+mkdir build
+cd build
+cmake ..
+make
+
+#启动server
+./server 
