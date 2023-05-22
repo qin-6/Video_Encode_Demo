@@ -1,9 +1,26 @@
-#linux平台streaming测试demo
+#安装依赖
+apt install autoconf libtool libdrm-dev xorg xorg-dev openbox libx11-dev libgl1-mesa-glx libgl1-mesa-dev
 
+#安装libva
+git clone https://github.com/intel/libva.git
+cd libva
+./autogen.sh
+./configure
+make
+make install
+
+#安装驱动
+git clone https://github.com/intel/intel-vaapi-driver.git
+cd libva
+./autogen.sh
+./configure
+make
+make install
+
+#运行测试demo
 mkdir build
 cd build
 cmake ..
 make
+./server  #运行
 
-#启动server
-./server 
